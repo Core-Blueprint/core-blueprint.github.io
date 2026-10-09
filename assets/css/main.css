@@ -91,7 +91,8 @@ h1, h2 { font-weight: 650; }
   --ink: #f1f3f8;
   --ink-muted: #b0bbcb;
   --line: #2b3442;
-  --accent: #00ffdd;
+  --accent: #f1f3f8;
+  --focus: #fff;
 }
 .hero-layout {
   min-height: min(720px, 85vh);
@@ -114,10 +115,23 @@ h1, h2 { font-weight: 650; }
   );
 }
 .hero > * { position: relative; z-index: 1; }
-.eyebrow { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.6rem; font-family: var(--font-display); font-size: .72rem; font-weight: 700; letter-spacing: .15em; color: var(--accent); }
-.eyebrow-line { width: 24px; height: 1px; background: currentColor; }
-.hero h1 { max-width: 860px; margin-bottom: 2rem; font-size: clamp(3.2rem, 6.1vw, 6.6rem); line-height: 1.07; }
-.hero h1 em { color: var(--accent); font-style: normal; }
+/* Primary blue at 20% opacity; standalone cyan is reserved for gradients. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 1.6rem;
+  padding: .375rem 1rem;
+  border-radius: .375rem;
+  background-color: rgba(0, 55, 255, 0.2);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+}
+.hero h1 { max-width: 860px; margin-bottom: 2rem; color: #fff; font-size: clamp(3.2rem, 6.1vw, 6.6rem); line-height: 1.07; }
 .hero-intro { max-width: 650px; margin-bottom: 2rem; color: var(--ink-muted); font-size: clamp(1.07rem, 1.45vw, 1.3rem); line-height: 1.75; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
 .button {
@@ -137,7 +151,7 @@ h1, h2 { font-weight: 650; }
 .aside-label { margin-bottom: 1.4rem; font-family: var(--font-display); font-size: .7rem; letter-spacing: .13em; font-weight: 700; color: var(--ink-muted); }
 .focus-list > div { display: flex; align-items: baseline; gap: 1.2rem; border-top: 1px solid var(--line); padding: 1rem 0; }
 .focus-list > div:last-child { border-bottom: 1px solid var(--line); }
-.focus-list span, .item-number, .project-index { font-family: var(--font-display); color: var(--accent); font-size: .74rem; font-weight: 700; letter-spacing: .08em; }
+.focus-list span, .item-number, .project-index { font-family: var(--font-display); color: var(--ink); opacity: .55; font-size: .74rem; font-weight: 700; letter-spacing: .08em; }
 .focus-list strong { font-family: var(--font-display); font-size: 1.2rem; font-weight: 620; letter-spacing: -.04em; }
 .aside-footnote { max-width: 270px; margin: 1.5rem 0 0; font-size: .83rem; line-height: 1.8; color: var(--ink-muted); }
 
@@ -164,7 +178,7 @@ h1, h2 { font-weight: 650; }
 .project-copy h3::after { order: 1; }
 .project-copy h3 .project-external { order: 2; margin-left: 1rem; }
 .project-copy h3 a { display: inline; }
-.project-copy h3 .project-external { color: var(--accent); font-size: .6em; }
+.project-copy h3 .project-external { color: var(--ink-muted); font-size: .6em; }
 .project-copy > p { max-width: 720px; margin-bottom: 1rem; color: var(--ink-muted); }
 .project-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
 .project-tags span { display: inline-block; padding: .2rem .55rem; border: 1px solid var(--line); border-radius: 3px; font-size: .69rem; font-weight: 650; color: var(--ink-muted); letter-spacing: .03em; }
@@ -174,7 +188,7 @@ h1, h2 { font-weight: 650; }
 .connect-inner > div > p:last-child { max-width: 590px; }
 .connect-links { align-self: center; border-top: 1px solid var(--line); }
 .connect-links a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem .1rem; border-bottom: 1px solid var(--line); font-family: var(--font-display); font-size: 1rem; font-weight: 650; }
-.connect-links a span:last-child { color: var(--accent); }
+.connect-links a span:last-child { color: var(--ink-muted); }
 
 .site-footer { border-top: 1px solid var(--line); }
 .footer-inner { min-height: 100px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; align-items: center; padding-block: 1.8rem; }
@@ -212,9 +226,9 @@ h1, h2 { font-weight: 650; }
     --ink: #f1f3f8;
     --ink-muted: #b0bbcb;
     --line: #2b3442;
-    --accent: #00ffdd;
-    --accent-soft: #123736;
-    --focus: #00ffdd;
+    --accent: #f1f3f8;
+    --accent-soft: rgba(0, 55, 255, 0.2);
+    --focus: #f1f3f8;
   }
 }
 
