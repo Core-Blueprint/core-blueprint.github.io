@@ -7,7 +7,7 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 ## Architecture
 
 - One semantic `index.html` and one responsive stylesheet, `assets/css/main.css`.
-- Original supplied SVG logo in `assets/brand/core-blueprint-logo.svg`. The dark-mode header keeps a light logo backing so its original dark fills and gradient remain intact.
+- Original supplied SVG logo in `assets/brand/core-blueprint-logo.svg`, presented without a background, padding or a card wrapper in both color schemes.
 - No JavaScript, framework, generator, CDN, analytics, external font service, GitHub API calls or build step.
 - Two local Latin-subset variable WOFF2 fonts: Space Grotesk for headings, buttons, eyebrows and navigation; Inter for content. System fallback covers unsupported glyphs.
 - Font binaries are distributed under their own SIL Open Font License 1.1; license texts are in `assets/fonts/licenses/`. Source: [Fontsource font-files](https://github.com/fontsource/font-files/tree/main/fonts/variable), using the Inter and Space Grotesk Google Fonts families.
