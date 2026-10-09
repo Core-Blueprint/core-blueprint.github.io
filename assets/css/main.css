@@ -81,8 +81,8 @@ h1, h2 { font-weight: 650; }
   min-height: min(720px, 85vh); display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(250px, .65fr);
   align-items: center; gap: clamp(3rem, 7vw, 8rem); padding-block: clamp(5rem, 10vw, 10rem);
 }
-/* Supplied ::before is a single-color overlay, not the radial glow.
-   Remain transparent until the original --cf-dark-60 value is supplied. */
+/* Supplied ::before is a 60% black overlay, not the radial glow.
+   Keep it transparent in light mode; the radial glow is still unspecified. */
 .hero::before {
   position: absolute;
   content: "";
@@ -187,6 +187,7 @@ h1, h2 { font-weight: 650; }
   :root {
     color-scheme: dark;
     --bg: #07090d;
+    --cf-dark-60: rgba(0, 0, 0, 0.6);
     --surface: #111722;
     --surface-muted: #171e29;
     --ink: #f1f3f8;
