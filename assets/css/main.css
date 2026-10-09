@@ -81,6 +81,7 @@ h1, h2 { font-weight: 650; }
   isolation: isolate;
   width: 100%;
   background-color: #07090d;
+  color: var(--ink);
   background-image: url("../images/cb-dashboard-spatial-hero-bg.avif");
   background-repeat: no-repeat;
   background-size: cover;
