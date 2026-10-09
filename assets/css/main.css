@@ -55,7 +55,7 @@ h1::after, h2::after, h3::after {
   color: transparent;
 }
 h1, h2 { font-weight: 650; }
-.shell { width: min(100% - 3rem, 1220px); margin-inline: auto; }
+.shell, .cb-section__inner { width: min(100% - 3rem, 1220px); margin-inline: auto; }
 
 .skip-link {
   position: fixed; z-index: 10; top: 1rem; left: 1rem;
@@ -77,12 +77,30 @@ h1, h2 { font-weight: 650; }
 .site-nav .nav-external { color: var(--accent); }
 
 .hero {
-  position: relative; isolation: isolate;
-  min-height: min(720px, 85vh); display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(250px, .65fr);
-  align-items: center; gap: clamp(3rem, 7vw, 8rem); padding-block: clamp(5rem, 10vw, 10rem);
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  background-color: #07090d;
+  background-image: url("../images/cb-dashboard-spatial-hero-bg.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* Hero remains readable in both OS color modes. */
+  --cf-dark-60: rgba(0, 0, 0, 0.6);
+  --ink: #f1f3f8;
+  --ink-muted: #b0bbcb;
+  --line: #2b3442;
+  --accent: #00ffdd;
 }
-/* Supplied ::before is a 60% black overlay, not the radial glow.
-   Keep it transparent in light mode; the radial glow is still unspecified. */
+.hero-layout {
+  min-height: min(720px, 85vh);
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(250px, .65fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 8rem);
+  padding-block: clamp(5rem, 10vw, 10rem);
+}
+/* Full-bleed overlay spans the section, not its constrained inner container. */
 .hero::before {
   position: absolute;
   content: "";
@@ -90,8 +108,8 @@ h1, h2 { font-weight: 650; }
   pointer-events: none;
   z-index: 0;
   background-image: linear-gradient(
-    var(--cf-dark-60, transparent),
-    var(--cf-dark-60, transparent)
+    var(--cf-dark-60),
+    var(--cf-dark-60)
   );
 }
 .hero > * { position: relative; z-index: 1; }
@@ -163,17 +181,18 @@ h1, h2 { font-weight: 650; }
 .site-footer a { font-size: .79rem; font-weight: 650; }
 
 @media (max-width: 950px) {
-  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-layout { grid-template-columns: 1fr; min-height: 0; }
   .hero-aside { display: none; }
   .hero h1 { max-width: 800px; }
 }
 
 @media (max-width: 700px) {
-  .shell { width: min(100% - 2.25rem, 1220px); }
+  .shell, .cb-section__inner { width: min(100% - 2.25rem, 1220px); }
   .header-inner { flex-wrap: wrap; align-items: flex-start; padding-block: 1.25rem; gap: .5rem; }
   .site-nav { width: 100%; justify-content: flex-start; gap: .1rem 1.25rem; }
   .site-nav a { font-size: .79rem; padding-block: .55rem; }
-  .hero { padding-block: 5rem; }
+  .hero-layout { padding-block: 5rem; }
+  .hero { background-position: 60% center; }
   .hero h1 { font-size: clamp(2.8rem, 10vw, 4.3rem); }
   .section-heading-row, .connect-inner { display: block; }
   .section-heading-row .text-link { display: inline-flex; margin-top: 1rem; }
@@ -187,7 +206,6 @@ h1, h2 { font-weight: 650; }
   :root {
     color-scheme: dark;
     --bg: #07090d;
-    --cf-dark-60: rgba(0, 0, 0, 0.6);
     --surface: #111722;
     --surface-muted: #171e29;
     --ink: #f1f3f8;
