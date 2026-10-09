@@ -162,8 +162,6 @@ h1, h2 { font-weight: 650; }
     --button-ink: #101827;
   }
   .button-primary:hover { background: #eef0ff; color: #101827; }
-  /* Original wordmark uses dark navy fills: retain contrast without recoloring the SVG. */
-  .brand { background: #f7f8fa; border-radius: 5px; padding: .38rem .55rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
