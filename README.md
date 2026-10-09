@@ -18,7 +18,9 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 
 ## Brand styling
 - Dark-mode page background: `#07090d`.
-- All `h1`–`h3` headings receive a decorative gradient dot via `::after`, blue `#0037ff` to turquoise `#00ffdd`. Keep trailing periods out of heading text.
+- All `h1`–`h3` headings remain a single foreground color and receive a decorative gradient dot via `::after`, blue `#0037ff` to turquoise `#00ffdd`. Cyan must not be used as a standalone text, link, or focus color. Keep trailing periods out of heading text.
+- Eyebrows use Space Grotesk, uppercase text, 0.1rem tracking, weight 500, small rounded corners, and a 20%-opacity primary-blue background (`rgba(0, 55, 255, 0.2)`). Padding and font size are provisional local mappings until source-site spacing tokens are provided.
+- Number labels use reduced opacity on the inherited text color rather than a cyan accent.
 - Full-width `<section>` elements own their backgrounds and pseudo-elements; each has an inner `.cb-section__inner` that constrains only the content. The hero background is the supplied dashboard composition, optimized to local AVIF. The hero overlay is 60% black (`rgba(0, 0, 0, 0.6)`) over the entire section in both color modes. This is not a separate radial glow.
 - Project external-link arrows appear after the heading's decorative dot.
 
