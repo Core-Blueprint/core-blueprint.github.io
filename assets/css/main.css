@@ -17,7 +17,7 @@
 /* Core Blueprint GitHub Pages: intentionally dependency-free. */
 :root {
   color-scheme: light;
-  --bg: #f7f8fa;
+  --bg: #fff;
   --surface: #fff;
   --surface-muted: #f1f3f7;
   --ink: #161e2c;
@@ -64,6 +64,16 @@ h1, h2 { font-weight: 650; }
 }
 .skip-link:focus { transform: none; }
 
+/* Fixed two-tone theme: dark framing and white reading sections. */
+.site-header, .section-connect, .site-footer {
+  --ink: #f1f3f8;
+  --ink-muted: #b0bbcb;
+  --line: #2b3442;
+  --accent: #f1f3f8;
+  --focus: #f1f3f8;
+  background-color: #07090d;
+  color: var(--ink);
+}
 .site-header { border-bottom: 1px solid var(--line); }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -156,6 +166,16 @@ h1, h2 { font-weight: 650; }
 .aside-footnote { max-width: 270px; margin: 1.5rem 0 0; font-size: .83rem; line-height: 1.8; color: var(--ink-muted); }
 
 .section { border-top: 1px solid var(--line); padding-block: clamp(5rem, 8vw, 8.5rem); }
+/* Main content stays white with dark text, independent of OS appearance. */
+.section-principles, .section-projects {
+  --ink: #161e2c;
+  --ink-muted: #556174;
+  --line: #dbe0e8;
+  --accent: #0037ff;
+  --focus: #0037ff;
+  background-color: #fff;
+  color: var(--ink);
+}
 .section-intro { max-width: 660px; }
 .section-intro h2, .connect-inner h2 { font-size: clamp(2.5rem, 4vw, 4.25rem); margin-bottom: 1.3rem; }
 .section-intro > p:last-child, .connect-inner > div > p:last-child { font-size: 1.06rem; color: var(--ink-muted); line-height: 1.8; }
@@ -164,7 +184,6 @@ h1, h2 { font-weight: 650; }
 .principle h3 { margin: 2rem 0 1rem; font-size: clamp(1.4rem, 2vw, 2rem); }
 .principle > p:last-child { max-width: 360px; color: var(--ink-muted); line-height: 1.8; }
 
-.section-projects { background: var(--surface); }
 .section-heading-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
 .text-link { flex: 0 0 auto; padding-bottom: .4rem; border-bottom: 1px solid var(--line); font-family: var(--font-display); font-size: .86rem; font-weight: 650; }
 .project-list { margin-top: 3.5rem; border-top: 1px solid var(--line); }
@@ -215,21 +234,6 @@ h1, h2 { font-weight: 650; }
   .principle h3 { margin-top: 1rem; }
   .project { grid-template-columns: 2rem 1fr; gap: .7rem; padding-block: 1.9rem; }
   .connect-links { margin-top: 2.5rem; }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --bg: #07090d;
-    --surface: #111722;
-    --surface-muted: #171e29;
-    --ink: #f1f3f8;
-    --ink-muted: #b0bbcb;
-    --line: #2b3442;
-    --accent: #f1f3f8;
-    --accent-soft: rgba(0, 55, 255, 0.2);
-    --focus: #f1f3f8;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
