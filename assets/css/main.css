@@ -18,6 +18,7 @@
 :root {
   color-scheme: light;
   --bg: #fff;
+  --cf-primary-5: rgba(0, 55, 255, 0.05);
   --surface: #fff;
   --surface-muted: #f1f3f7;
   --ink: #161e2c;
@@ -176,6 +177,8 @@ h1, h2 { font-weight: 650; }
   background-color: #fff;
   color: var(--ink);
 }
+/* Explicit opt-in for alternating light sections, independent of the dark framing. */
+.section--tinted { background-color: var(--cf-primary-5); }
 .section-intro { max-width: 660px; }
 .section-intro h2, .connect-inner h2 { font-size: clamp(2.5rem, 4vw, 4.25rem); margin-bottom: 1.3rem; }
 .section-intro > p:last-child, .connect-inner > div > p:last-child { font-size: 1.06rem; color: var(--ink-muted); line-height: 1.8; }
