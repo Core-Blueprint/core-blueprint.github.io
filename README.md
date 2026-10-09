@@ -22,6 +22,22 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 - Full-width `<section>` elements own their backgrounds and pseudo-elements; each has an inner `.cb-section__inner` that constrains only the content. The hero background is the supplied dashboard composition, optimized to local AVIF. The hero overlay is 60% black (`rgba(0, 0, 0, 0.6)`) over the entire section in both color modes. This is not a separate radial glow.
 - Project external-link arrows appear after the heading's decorative dot.
 
+## Hero image asset
+
+The CSS references `assets/images/cb-dashboard-spatial-hero-bg.avif` as a local background. Add the optimized asset to that exact path before testing or publishing. This image is supplied separately as `core-blueprint-hero-asset.zip` because this integration cannot write the binary into the GitHub repository directly.
+
+From the repository root, after downloading the image asset ZIP:
+
+```bash
+unzip -o ~/Downloads/core-blueprint-hero-asset.zip -d .
+test -s assets/images/cb-dashboard-spatial-hero-bg.avif
+sha256sum assets/images/cb-dashboard-spatial-hero-bg.avif
+```
+
+Expected SHA-256: `c966845843a1b62484a7d22b9a17b9d3587cb42ff48776e27a9df6c423e39052`.
+
+The source image is 1672 × 941 pixels; the optimized AVIF is approximately 43 KB. The 60% black hero overlay covers the full viewport, while `.cb-section__inner` constrains only the copy and controls.
+
 ## Local preview
 
 From the repository root:
