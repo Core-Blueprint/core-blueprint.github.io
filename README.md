@@ -37,7 +37,7 @@ file assets/images/cb-dashboard-spatial-hero-bg.png
 sha256sum assets/images/cb-dashboard-spatial-hero-bg.png
 ```
 
-The verified upload is a 1672 × 941 RGBA PNG. Its SHA-256 is `e6122fd45ed267024a2d36e0c169cda8995eaad33c2824688dcae47349f2e2b3`. The full-width hero retains a black overlay at 60% opacity; the `.cb-section__inner` wrapper only constrains text content.
+The hero asset is a 1672 × 941 PNG. The published file should be the owner's locally optimized PNG; verify the actual committed file size and SHA-256 during release acceptance rather than relying on a checksum from an older version. The full-width hero retains a black overlay at 60% opacity; the `.cb-section__inner` wrapper only constrains text content.
 
 ## Local preview
 
