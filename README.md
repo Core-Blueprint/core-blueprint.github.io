@@ -15,6 +15,12 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 - Curated project descriptions and links are edited in `index.html`.
 - `.nojekyll` disables Jekyll preprocessing.
 
+## Brand styling
+- Dark-mode page background: `#07090d`.
+- All `h1`–`h3` headings receive a decorative gradient dot via `::after`, blue `#0037ff` to turquoise `#00ffdd`. Keep trailing periods out of heading text.
+- The hero has a `::before` overlay matching the supplied linear-gradient snippet. Since the production token `--cf-dark-60` was not provided, the fallback is transparent. The true radial glow still needs the original CSS; do not invent a substitute.
+- Project external-link arrows appear after the heading's decorative dot.
+
 ## Local preview
 
 From the repository root:
