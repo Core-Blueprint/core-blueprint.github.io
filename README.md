@@ -12,12 +12,12 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 - No JavaScript, framework, generator, CDN, analytics, external font service, GitHub API calls or build step.
 - Two local Latin-subset variable WOFF2 fonts: Space Grotesk for headings, buttons, eyebrows and navigation; Inter for content. System fallback covers unsupported glyphs.
 - Font binaries are distributed under their own SIL Open Font License 1.1; license texts are in `assets/fonts/licenses/`. Source: [Fontsource font-files](https://github.com/fontsource/font-files/tree/main/fonts/variable), using the Inter and Space Grotesk Google Fonts families.
-- System fonts and automatic light/dark presentation using `prefers-color-scheme`.
+- Fixed two-tone palette independent of system appearance: header, hero, CTA and footer are dark; Principles and Projects are white with dark text.
 - Curated project descriptions and links are edited in `index.html`.
 - `.nojekyll` disables Jekyll preprocessing.
 
 ## Brand styling
-- Dark-mode page background: `#07090d`.
+- Header, hero, CTA and footer background: `#07090d`. Content sections: white (`#fff`) with dark text.
 - All `h1`–`h3` headings remain a single foreground color and receive a decorative gradient dot via `::after`, blue `#0037ff` to turquoise `#00ffdd`. Cyan must not be used as a standalone text, link, or focus color. Keep trailing periods out of heading text.
 - Eyebrows use Space Grotesk, uppercase text, 0.1rem tracking, weight 500, small rounded corners, and a 20%-opacity primary-blue background (`rgba(0, 55, 255, 0.2)`). Padding and font size are provisional local mappings until source-site spacing tokens are provided.
 - Number labels use reduced opacity on the inherited text color rather than a cyan accent.
@@ -48,7 +48,7 @@ From the repository root:
 python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080`. Confirm the hero photo and `::before` cover the full browser width, while content follows the container width. Check the mobile photo crop, the original logo, locally loaded fonts, keyboard navigation, both color modes, mobile layouts and outbound links before accepting any changes. In browser DevTools → Network, confirm the two WOFF2 requests and SVG come from localhost and that there are no third-party requests.
+Open `http://localhost:8080`. Confirm the hero photo and `::before` cover the full browser width, while content follows the container width. Check the mobile photo crop, the original logo, locally loaded fonts, keyboard navigation, dark framing versus white content in both system appearance modes, mobile layouts and outbound links before accepting any changes. In browser DevTools → Network, confirm the two WOFF2 requests and SVG come from localhost and that there are no third-party requests.
 
 ## Optional offline release archive
 
