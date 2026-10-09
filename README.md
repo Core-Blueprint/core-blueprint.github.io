@@ -7,6 +7,7 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 ## Architecture
 
 - One semantic `index.html` and one responsive stylesheet, `assets/css/main.css`.
+- Full-width sections with `.cb-section__inner` content wrappers and a locally hosted compressed hero image under `assets/images/`.
 - Original supplied SVG logo in `assets/brand/core-blueprint-logo.svg`, presented without a background, padding or a card wrapper in both color schemes.
 - No JavaScript, framework, generator, CDN, analytics, external font service, GitHub API calls or build step.
 - Two local Latin-subset variable WOFF2 fonts: Space Grotesk for headings, buttons, eyebrows and navigation; Inter for content. System fallback covers unsupported glyphs.
@@ -18,7 +19,7 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 ## Brand styling
 - Dark-mode page background: `#07090d`.
 - All `h1`–`h3` headings receive a decorative gradient dot via `::after`, blue `#0037ff` to turquoise `#00ffdd`. Keep trailing periods out of heading text.
-- The hero `::before` uses the supplied linear overlay with `--cf-dark-60: rgba(0, 0, 0, 0.6)` in dark mode; the light-mode fallback stays transparent. This is not the site's radial glow: its original CSS remains to be supplied.
+- Full-width `<section>` elements own their backgrounds and pseudo-elements; each has an inner `.cb-section__inner` that constrains only the content. The hero background is the supplied dashboard composition, optimized to local AVIF. The hero overlay is 60% black (`rgba(0, 0, 0, 0.6)`) over the entire section in both color modes. This is not a separate radial glow.
 - Project external-link arrows appear after the heading's decorative dot.
 
 ## Local preview
@@ -29,7 +30,7 @@ From the repository root:
 python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080`. Review the original logo, locally loaded fonts, keyboard navigation, light/dark appearance, mobile layouts and outbound links before accepting any changes. In browser DevTools → Network, confirm the two WOFF2 requests and SVG come from localhost and that there are no third-party requests.
+Open `http://localhost:8080`. Confirm the hero photo and `::before` cover the full browser width, while content follows the container width. Check the mobile photo crop, the original logo, locally loaded fonts, keyboard navigation, both color modes, mobile layouts and outbound links before accepting any changes. In browser DevTools → Network, confirm the two WOFF2 requests and SVG come from localhost and that there are no third-party requests.
 
 ## Optional offline release archive
 
