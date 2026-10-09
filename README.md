@@ -7,7 +7,10 @@ The static organisation website for [Core Blueprint](https://github.com/Core-Blu
 ## Architecture
 
 - One semantic `index.html` and one responsive stylesheet, `assets/css/main.css`.
-- No JavaScript, framework, generator, CDN, analytics, font service, GitHub API calls or build step.
+- Original supplied SVG logo in `assets/brand/core-blueprint-logo.svg`. The dark-mode header keeps a light logo backing so its original dark fills and gradient remain intact.
+- No JavaScript, framework, generator, CDN, analytics, external font service, GitHub API calls or build step.
+- Two local Latin-subset variable WOFF2 fonts: Space Grotesk for headings, buttons, eyebrows and navigation; Inter for content. System fallback covers unsupported glyphs.
+- Font binaries are distributed under their own SIL Open Font License 1.1; license texts are in `assets/fonts/licenses/`. Source: [Fontsource font-files](https://github.com/fontsource/font-files/tree/main/fonts/variable), using the Inter and Space Grotesk Google Fonts families.
 - System fonts and automatic light/dark presentation using `prefers-color-scheme`.
 - Curated project descriptions and links are edited in `index.html`.
 - `.nojekyll` disables Jekyll preprocessing.
@@ -20,7 +23,7 @@ From the repository root:
 python3 -m http.server 8080
 ```
 
-Open `http://localhost:8080`. Review keyboard navigation, light/dark appearance, mobile layouts and outbound links before accepting any changes.
+Open `http://localhost:8080`. Review the original logo, locally loaded fonts, keyboard navigation, light/dark appearance, mobile layouts and outbound links before accepting any changes. In browser DevTools → Network, confirm the two WOFF2 requests and SVG come from localhost and that there are no third-party requests.
 
 ## Optional offline release archive
 
@@ -28,7 +31,7 @@ GitHub Pages publishes the source directly, so no build is required. For review 
 
 ```bash
 mkdir -p dist
-python3 -m zipfile -c dist/core-blueprint-github-pages.zip index.html assets/css/main.css .nojekyll
+python3 -m zipfile -c dist/core-blueprint-github-pages.zip index.html assets .nojekyll
 python3 -m zipfile -t dist/core-blueprint-github-pages.zip
 sha256sum dist/core-blueprint-github-pages.zip
 ```
